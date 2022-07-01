@@ -9,15 +9,12 @@ package taller11;
  * @author UTPL
  */
 public class MenudelDia extends Menu {
+
     private double valorPostre;
     private double valorBebida;
 
-    public MenudelDia() {
-
-    }
-
-    public MenudelDia(String nP, double vinicialM, double vpostre, double vbebida) {
-        super(nP, vinicialM);+
+    public MenudelDia(String n, double vinicial, double vpostre, double vbebida) {
+        super(n, vinicial);
         valorPostre = vpostre;
         valorBebida = vbebida;
     }

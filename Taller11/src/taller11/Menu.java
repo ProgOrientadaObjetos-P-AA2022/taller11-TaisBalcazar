@@ -9,26 +9,26 @@ package taller11;
  * @author UTPL
  */
 public abstract class Menu {
-     protected String nombrePlato;
+
+    protected String nombrePlato;
     protected double valorMenu;
     protected double valorinicialMenu;
 
-    public Menu(String nP, double vinicialM) {
-        nombrePlato = nP;
-
-        valorinicialMenu = vinicialM;
+    public Menu(String n, double vinicial) {
+        nombrePlato = n;
+        valorinicialMenu = vinicial;
     }
 
-    public void establecerNombrePlato(String nP) {
-        nombrePlato = nombrePlato;
+    public void establecerNombrePlato(String n) {
+        nombrePlato = n;
     }
 
-    public void establecerValorMenu(double vMenu) {
-        valorMenu = vMenu;
+    public void establecerValorMenu(double v) {
+        valorMenu = v;
     }
 
-    public void establecerValorinicialMenu(double vinicialMenu) {
-        valorinicialMenu = vinicialMenu;
+    public void establecerValorinicialMenu(double vinicial) {
+        valorinicialMenu = vinicial;
     }
 
     public String obtenerNombrePlato() {

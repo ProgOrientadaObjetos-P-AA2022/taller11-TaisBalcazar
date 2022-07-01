@@ -8,16 +8,13 @@ package taller11;
  *
  * @author UTPL
  */
-public class MenuEconomico extends Menu{
-     private double porcentajeDescuento;
+public class MenuEconomico extends Menu {
 
-    public MenuEconomico() {
-
-    }
+    private double porcentajeDescuento;
 
     public MenuEconomico(String nP, double vinicialM) {
         super(nP, vinicialM);
-        
+
     }
 
     public double obtenerPorcentajeDescuento() {
@@ -29,7 +26,7 @@ public class MenuEconomico extends Menu{
     }
 
     @Override
-    public void  calcularvalorcancelartotal() {
+    public void calcularvalorcancelartotal() {
         valorMenu = valorinicialMenu - porcentajeDescuento;
     }
 

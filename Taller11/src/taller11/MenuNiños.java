@@ -8,39 +8,36 @@ package taller11;
  *
  * @author UTPL
  */
-public class MenuNiños extends Menu{
-    private double valorPorcionHelada;
-    private double valorPorcionPastel;
+public class MenuNiños extends Menu {
 
-    public MenuNiños() {
+    private double valorHelado;
+    private double valorPastel;
 
+    public MenuNiños(String nombrePl, double valorinicial, double vh, double vp) {
+        super(nombrePl, valorinicial);
+        valorHelado = vh;
+        valorPastel = vp;
     }
 
-    public MenuNiños(String nombrePl, double valorinicialM, double vph, double vpp) {
-        super(nombrePl, valorinicialM);
-        valorPorcionHelada = vph;
-        valorPorcionPastel = vpp;
+    public void establecerValorHelado(double valorH) {
+        this.valorHelado = valorH;
     }
 
-    public void establecerValorPorcionHelada(double valorPorcionHelada) {
-        this.valorPorcionHelada = valorPorcionHelada;
+    public void establecerValorPastel(double valorP) {
+        valorPastel = valorP;
     }
 
-    public void establecerValorPorcionPastel(double valorPorcionPastel) {
-        this.valorPorcionPastel = valorPorcionPastel;
+    public double obtenerValorHelado() {
+        return valorHelado;
     }
 
-    public double obtenerValorPorcionHelada() {
-        return valorPorcionHelada;
-    }
-
-    public double obtenerValorPorcionPastel() {
-        return valorPorcionPastel;
+    public double obtenerValorPastel() {
+        return valorPastel;
     }
 
     @Override
-    public void  calcularvalorcancelartotal() {
-        valorMenu = valorinicialMenu + valorPorcionHelada + valorPorcionPastel;
+    public void calcularvalorcancelartotal() {
+        valorMenu = valorinicialMenu + valorHelado + valorPastel;
     }
 
     public double obtenervalorcancelartotal() {
@@ -54,8 +51,8 @@ public class MenuNiños extends Menu{
                 + "Valor Porcion Helado:%.2f\n"
                 + "Valor Porcion Pastel:%.2f\n"
                 + "Valor Menu:%.2f\n", cadena,
-                obtenerValorPorcionHelada(),
-                obtenerValorPorcionPastel(),
+                obtenerValorHelado(),
+                obtenerValorPastel(),
                 obtenerValorMenu()
         );
         return cadena;

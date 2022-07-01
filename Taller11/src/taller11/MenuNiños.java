@@ -13,10 +13,8 @@ public class MenuNiños extends Menu {
     private double valorHelado;
     private double valorPastel;
 
-    public MenuNiños(String nombrePl, double valorinicial, double vh, double vp) {
+    public MenuNiños(String nombrePl, double valorinicial) {
         super(nombrePl, valorinicial);
-        valorHelado = vh;
-        valorPastel = vp;
     }
 
     public void establecerValorHelado(double valorH) {
@@ -36,8 +34,8 @@ public class MenuNiños extends Menu {
     }
 
     @Override
-    public void calcularvalorcancelartotal() {
-        valorMenu = valorinicialMenu + valorHelado + valorPastel;
+    public void calcularValorTotal() {
+        valorMenu = valorInicial + valorHelado + valorPastel;
     }
 
     public double obtenervalorcancelartotal() {
@@ -48,9 +46,9 @@ public class MenuNiños extends Menu {
     public String toString() {
         String cadena = String.format("Menu de Ninos\n%s", super.toString());
         cadena = String.format("%s"
-                + "Valor Porcion Helado:%.2f\n"
-                + "Valor Porcion Pastel:%.2f\n"
-                + "Valor Menu:%.2f\n", cadena,
+                + "\tValor Porcion Helado:%.2f\n"
+                + "\tValor Porcion Pastel:%.2f\n"
+                + "\tValor del Menu:%.2f\n", cadena,
                 obtenerValorHelado(),
                 obtenerValorPastel(),
                 obtenerValorMenu()

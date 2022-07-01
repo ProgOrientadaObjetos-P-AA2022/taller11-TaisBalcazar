@@ -11,14 +11,12 @@ package taller11;
 public class MenuCarta extends Menu {
 
     private double valorGuarnicion;
-    private double valorBebida;
-    private double porcentajeAdicional;
+    private double valorB;
+    private double pAdicional;
 
 
-    public MenuCarta(String nP, double vinicialM, double vPG, double vBebida) {
-        super(nP, vinicialM);
-        valorGuarnicion = vPG;
-        valorBebida = vBebida;
+    public MenuCarta(String nP, double vI) {
+        super(nP, vI);
 
     }
 
@@ -26,12 +24,12 @@ public class MenuCarta extends Menu {
         valorGuarnicion = vPG;
     }
 
-    public void establecerValorBebida(double vBebida) {
-        valorBebida = vBebida;
+    public void establecerValorBebida(double vB) {
+        valorB = vB;
     }
 
     public void establecerPorcentajeAdicional(double pA) {
-        porcentajeAdicional = ((pA * valorinicialMenu)) / 100;
+        pAdicional = ((pA * valorInicial)) / 100;
     }
 
     public double obtenerValorGuarnicion() {
@@ -39,16 +37,16 @@ public class MenuCarta extends Menu {
     }
 
     public double obtenerValorBebida() {
-        return valorBebida;
+        return valorB;
     }
 
     public double obtenerPorcentajeAdicional() {
-        return porcentajeAdicional;
+        return pAdicional;
     }
 
     @Override
-    public void calcularvalorcancelartotal() {
-        valorMenu = (valorinicialMenu + valorGuarnicion + valorBebida) + porcentajeAdicional;
+    public void calcularValorTotal() {
+        valorMenu = (valorInicial + valorGuarnicion + valorB) + pAdicional;
 
     }
 
@@ -58,12 +56,13 @@ public class MenuCarta extends Menu {
 
     @Override
     public String toString() {
-        String cadena = String.format("Menu a la carta\n%s", super.toString());
+        String cadena = String.format("Menu a la Carta:\n%s", super.toString());
         cadena = String.format("%s"
-                + "Valor porcion guarnicion:%.2f\n"
-                + "Valor bebida:%.2f\n"
-                + "Porcentaje Adicional:%.2f\n"
-                + "Valor menu:%.2f\n", cadena,
+                + "\tValor guarnición: %.2f\n"
+                + "\tValor bebida: %.2f\n"
+                + "\tPorcentaje Adicional: %.2f\n"
+                + "\tValor del Menú: %.2f\n",
+                cadena,
                 obtenerValorGuarnicion(),
                 obtenerValorBebida(),
                 obtenerPorcentajeAdicional(),

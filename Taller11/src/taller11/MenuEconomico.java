@@ -22,12 +22,12 @@ public class MenuEconomico extends Menu {
     }
 
     public void establecerPorcentajeDescuento(double pD) {
-        porcentajeDescuento = ((pD * valorinicialMenu)) / 100;
+        porcentajeDescuento = ((pD * valorInicial)) / 100;
     }
 
     @Override
-    public void calcularvalorcancelartotal() {
-        valorMenu = valorinicialMenu - porcentajeDescuento;
+    public void calcularValorTotal() {
+        valorMenu = valorInicial - porcentajeDescuento;
     }
 
     public double obtenervalorcancelartotal() {
@@ -36,10 +36,10 @@ public class MenuEconomico extends Menu {
 
     @Override
     public String toString() {
-        String cadena = String.format("Menu Economico\n%s", super.toString());
+        String cadena = String.format("Menu Económico\n%s", super.toString());
         cadena = String.format("%s"
-                + "Porcentaje descuento%.2f\n"
-                + "Valor Menu:%.2f\n", cadena,
+                + "Porcentaje Descuento: %.2f\n"
+                + "Valor del Menu:%.2f\n", cadena,
                 obtenerPorcentajeDescuento(),
                 obtenerValorMenu());
         return cadena;

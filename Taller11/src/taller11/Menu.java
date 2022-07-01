@@ -12,11 +12,11 @@ public abstract class Menu {
 
     protected String nombrePlato;
     protected double valorMenu;
-    protected double valorinicialMenu;
+    protected double valorInicial;
 
-    public Menu(String n, double vinicial) {
+    public Menu(String n, double vI) {
         nombrePlato = n;
-        valorinicialMenu = vinicial;
+        valorInicial = vI;
     }
 
     public void establecerNombrePlato(String n) {
@@ -27,8 +27,8 @@ public abstract class Menu {
         valorMenu = v;
     }
 
-    public void establecerValorinicialMenu(double vinicial) {
-        valorinicialMenu = vinicial;
+    public void establecerValorInicial(double vI) {
+        valorInicial = vI;
     }
 
     public String obtenerNombrePlato() {
@@ -39,17 +39,18 @@ public abstract class Menu {
         return valorMenu;
     }
 
-    public double obtenerValorinicialMenu() {
-        return valorinicialMenu;
+    public double obtenerValorInicial() {
+        return valorInicial;
     }
 
-    public abstract void calcularvalorcancelartotal();
+    public abstract void calcularValorTotal();
 
     @Override
     public String toString() {
-        String cadena = String.format("Nombre Plato:%s\n"
-                + "Valor menu inicial:%.2f\n", obtenerNombrePlato(),
-                obtenerValorinicialMenu());
+        String cadena = String.format("\tPlato: %s\n"
+                + "\tValor Inicial del menu: %.2f\n", 
+                obtenerNombrePlato(),
+                obtenerValorInicial());
         return cadena;
     }
 }

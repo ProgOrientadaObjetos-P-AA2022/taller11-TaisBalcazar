@@ -13,10 +13,9 @@ public class MenudelDia extends Menu {
     private double valorPostre;
     private double valorBebida;
 
-    public MenudelDia(String n, double vinicial, double vpostre, double vbebida) {
+    public MenudelDia(String n, double vinicial) {
         super(n, vinicial);
-        valorPostre = vpostre;
-        valorBebida = vbebida;
+
     }
 
     public void establecerValorPostre(double vP) {
@@ -36,8 +35,8 @@ public class MenudelDia extends Menu {
     }
 
     @Override
-    public void calcularvalorcancelartotal() {
-        valorMenu = valorinicialMenu + valorPostre + valorBebida;
+    public void calcularValorTotal() {
+        valorMenu = valorInicial + valorPostre + valorBebida;
     }
 
     public double obtenerValorcancelartotal() {
@@ -46,13 +45,13 @@ public class MenudelDia extends Menu {
 
     @Override
     public String toString() {
-        String cadena = String.format("Menu del dia\n%s", super.toString());
+        String cadena = String.format("Menu del Dia\n%s", super.toString());
         cadena = String.format("%s"
-                + "Valor Postre:%.2f\n"
-                + "Valor Bebida:%.2f\n"
-                + "Valor Menu:%.2f\n", cadena,
-                obtenerValorPostre(),
+                + "\tValor Bebida:%.2f\n"
+                +"\tValor Postre:%.2f\n"
+                + "\tValor del Menu:%.2f\n", cadena,
                 obtenerValorBebida(),
+                obtenerValorPostre(),
                 obtenerValorMenu());
         return cadena;
     }

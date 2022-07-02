@@ -14,10 +14,11 @@ public class MenuCarta extends Menu {
     private double valorB;
     private double pAdicional;
 
-
-    public MenuCarta(String nP, double vI) {
+    public MenuCarta(String nP, double vI, double vG, double vB, double pA) {
         super(nP, vI);
-
+        valorGuarnicion = vG;
+        valorB = vB;
+        pAdicional = pA;
     }
 
     public void establecerValorGuarnicion(double vPG) {
@@ -29,7 +30,7 @@ public class MenuCarta extends Menu {
     }
 
     public void establecerPorcentajeAdicional(double pA) {
-        pAdicional = ((pA * valorInicial)) / 100;
+        pAdicional = pA;
     }
 
     public double obtenerValorGuarnicion() {
@@ -46,8 +47,8 @@ public class MenuCarta extends Menu {
 
     @Override
     public void calcularValorTotal() {
-        valorMenu = (valorInicial + valorGuarnicion + valorB) + pAdicional;
-
+        valorMenu = valorInicial + valorGuarnicion + valorB;
+        valorMenu = valorMenu + ((pAdicional * valorMenu) / 100);
     }
 
     public double obtenervalorcancelartotal() {

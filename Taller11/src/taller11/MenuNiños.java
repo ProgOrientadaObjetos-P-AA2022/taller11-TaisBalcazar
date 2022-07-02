@@ -13,8 +13,10 @@ public class MenuNiños extends Menu {
     private double valorHelado;
     private double valorPastel;
 
-    public MenuNiños(String nombrePl, double valorinicial) {
+    public MenuNiños(String nombrePl, double valorinicial, double vH, double vP) {
         super(nombrePl, valorinicial);
+        valorHelado = vH;
+        valorPastel = vP;
     }
 
     public void establecerValorHelado(double valorH) {

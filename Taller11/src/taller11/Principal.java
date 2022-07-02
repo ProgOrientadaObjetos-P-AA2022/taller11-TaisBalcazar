@@ -16,37 +16,27 @@ public class Principal {
 
         ArrayList<Menu> menu = new ArrayList<>();
 
-        MenuNiños mn1 = new MenuNiños("Niños 01", 2);
-        mn1.establecerValorHelado(1.50);
-        mn1.establecerValorPastel(1);
+        MenuNiños mn1 = new MenuNiños("Niños 01", 2, 1, 1.5);
         mn1.calcularValorTotal();
 
-        MenuNiños mn2 = new MenuNiños("Niños 02", 3);
-        mn2.establecerValorHelado(1.50);
-        mn2.establecerValorPastel(1);
+        MenuNiños mn2 = new MenuNiños("Niños 02", 3, 1, 1.5);
         mn2.calcularValorTotal();
         menu.add(mn1);
         menu.add(mn2);
 
-        MenuEconomico me1 = new MenuEconomico("Econo 001", 4);
-        me1.establecerPorcentajeDescuento(5);
+        MenuEconomico me1 = new MenuEconomico("Econo 001", 4, 25);
         me1.calcularValorTotal();
         menu.add(me1);
 
-        MenudelDia md1 = new MenudelDia("Dia 001", 5);
-        md1.establecerValorBebida(1);
-        md1.establecerValorPostre(1);
+        MenudelDia md1 = new MenudelDia("Dia 001", 5, 1, 1);
         md1.calcularValorTotal();
         menu.add(md1);
 
-        MenuCarta mC1 = new MenuCarta("Carta001", 6);
-        mC1.establecerValorGuarnicion(1.50);
-        mC1.establecerValorBebida(2);
-        mC1.establecerPorcentajeAdicional(10);
+        MenuCarta mC1 = new MenuCarta("Carta001", 6, 1.5, 2, 10);
         mC1.calcularValorTotal();
         menu.add(mC1);
 
-        Cuenta c = new Cuenta("Tais Balcazar", menu);
+        Cuenta c = new Cuenta("Tais Balcazar", menu, 10);
         c.calcularValorCancelar();
 
         System.out.println(c);
